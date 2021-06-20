@@ -21,7 +21,7 @@
 //  Serial.println("Blynk timer triggered...");
 //  // for all signals to be sent at once
 //  Serial.println("Counter: " + String(runtimeMinutes));
-//  Serial.println("Clock: " + String(systemHourMinute));
+//  Serial.println("Clock: " + String(systemClock));
 //  Serial.println("Batt. Volt.: " + String(ssBatteryVolt));
 //  Serial.println("Temperature: " + String(temp));
 //  Serial.println("Humidity: " + String(humidity));
@@ -30,7 +30,7 @@
 //
 //  Blynk.virtualWrite(VP_LR_RUNTIME, runtimeMinutes);
 //  delay(MESSAGE_DELAY);
-//  Blynk.virtualWrite(VP_SYSTEM_TIME, systemHourMinute);
+//  Blynk.virtualWrite(VP_CLOCK, systemClock);
 //  delay(MESSAGE_DELAY);
 //  Blynk.virtualWrite(VP_BATT_VOLT, ssBatteryVolt);
 //  delay(MESSAGE_DELAY);

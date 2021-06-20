@@ -28,10 +28,10 @@ int blynkCounter = 0;
 #define MESSAGE_DELAY                       100
 
 #define VP_RUNTIME                          V0
-#define VP_SYSTEM_TIME                      V1
+#define VP_CLOCK                            V1
 #define VP_BATT_VOLTAGE                     V2
-#define VP_PS_TEMPERATURE                   V3
-#define VP_PS_HUMIDITY                      V4
+#define VP_TEMPERATURE                      V3
+#define VP_HUMIDITY                         V4
 
 #define VP_LAST_DEBUG_CODE                  V21
 
@@ -42,11 +42,11 @@ int blynkCounter = 0;
 #define VP_PS_AC_LED_HEART_MODE             V46
 
 // digital states
-#define VP_AUTO_LOAD_POWER                V51
-#define VP_MANUAL_LOAD_POWER_ON           V52
+#define VP_AUTO_LOAD_POWER                  V51
+#define VP_MANUAL_LOAD_POWER_ON             V52
 
-#define VP_FORCE_RADIO_POWER        V100
-#define VP_FORCE_CAMERA_POWER       V101
+#define VP_FORCE_RADIO_POWER                V100
+#define VP_FORCE_CAMERA_POWER               V101
 
 #define BLYNK_PRINT Serial
 
@@ -75,6 +75,28 @@ void blynkTimerEvent()
   // You can send any value at any time.
   // Please don't send more that 10 values per second.
   Blynk.virtualWrite(VP_PS_AC_MAIN_DOOR_LIGHT_ON, (mainDoorLightOn ? 255 : 0));
+
+
+  yield();
+  Serial.println("Blynk timer triggered...");
+  // for all signals to be sent at once
+  Serial.println("Counter: " + String(runtimeMinutes));
+  Serial.println("Clock: " + String(systemClock));
+  Serial.println("Batt. Volt.: " + String(ssBatteryVolt));
+  Serial.println("Temperature: " + String(temp));
+  Serial.println("Humidity: " + String(humidity));
+
+
+  Blynk.virtualWrite(VP_RUNTIME, runtimeMinutes);
+  delay(MESSAGE_DELAY);
+  Blynk.virtualWrite(VP_CLOCK, systemClock);
+  delay(MESSAGE_DELAY);
+  Blynk.virtualWrite(VP_BATT_VOLTAGE, ssBatteryVolt);
+  delay(MESSAGE_DELAY);
+  Blynk.virtualWrite(VP_TEMPERATURE, temp);
+  delay(MESSAGE_DELAY);
+  Blynk.virtualWrite(VP_HUMIDITY, humidity);
+  delay(MESSAGE_DELAY);
 
   Serial.println("Blynk timer triggered...");
   // for all signals to be sent at once

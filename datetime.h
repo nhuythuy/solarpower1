@@ -62,7 +62,7 @@ void getServerTime(){
 
   getYearMonthDate();
 
-  systemHourMinute = (float)currentHour + currentMin / 100.0;
+  systemClock = (float)currentHour + currentMin / 100.0;
   Serial.println("Date YYYY-MM-DD:  " + String(currentYear) + "-" + String(currentMonth) + "-" + String(currentDate));  
   Serial.println("Today:  " + String(DayOfWeek[currentDay]) + " (" + String(currentDay) + ") - " + timeClient.getFormattedTime());  
 }
