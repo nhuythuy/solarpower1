@@ -35,11 +35,11 @@ int blynkCounter = 0;
 
 #define VP_LAST_DEBUG_CODE                  V21
 
-#define VP_PS_AC_MAIN_DOOR_LIGHT_ON         V44   // status
+#define VP_AC_MAIN_DOOR_LIGHT_ON         V44   // status
 
 // control signals, only available on Blynk
-#define VP_PS_AC_MAIN_DOOR_LIGHT            V45
-#define VP_PS_AC_LED_HEART_MODE             V46
+#define VP_AC_MAIN_DOOR_LIGHT            V45
+#define VP_AC_LED_HEART_MODE             V46
 
 // digital states
 #define VP_AUTO_LOAD_POWER                  V51
@@ -61,11 +61,11 @@ BLYNK_WRITE(VP_MANUAL_LOAD_POWER_ON){
   storeState(ADDRESS_MANUAL_LOAD_POWER_ON, manualLoadPowerOn);
 }
 
-BLYNK_WRITE(VP_PS_AC_LED_HEART_MODE){
+BLYNK_WRITE(VP_AC_LED_HEART_MODE){
   heartLedMode = param.asInt();
 }
 
-BLYNK_WRITE(VP_PS_AC_MAIN_DOOR_LIGHT){
+BLYNK_WRITE(VP_AC_MAIN_DOOR_LIGHT){
   mainDoorLightMode = param.asInt();
 }
 
@@ -74,7 +74,7 @@ void blynkTimerEvent()
   yield();  
   // You can send any value at any time.
   // Please don't send more that 10 values per second.
-  Blynk.virtualWrite(VP_PS_AC_MAIN_DOOR_LIGHT_ON, (mainDoorLightOn ? 255 : 0));
+  Blynk.virtualWrite(VP_AC_MAIN_DOOR_LIGHT_ON, (mainDoorLightOn ? 255 : 0));
 
 
   yield();
