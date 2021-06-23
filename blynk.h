@@ -1,6 +1,6 @@
 // Fill-in information from your Blynk Template here
-#define BLYNK_TEMPLATE_ID "---"
-#define BLYNK_DEVICE_NAME "Xyz"
+#define BLYNK_TEMPLATE_ID "TMPL41K1Al5C"
+#define BLYNK_DEVICE_NAME "PowerStation"
 
 
 #define BLYNK_FIRMWARE_VERSION        "0.1.0"
@@ -33,20 +33,16 @@ int blynkCounter = 0;
 #define VP_TEMPERATURE                      V3
 #define VP_HUMIDITY                         V4
 
-#define VP_LAST_DEBUG_CODE                  V21
-
-#define VP_AC_MAIN_DOOR_LIGHT_ON         V44   // status
+#define VP_AC_MAIN_DOOR_LIGHT_ON            V44   // status
 
 // control signals, only available on Blynk
-#define VP_AC_MAIN_DOOR_LIGHT            V45
-#define VP_AC_LED_HEART_MODE             V46
+#define VP_AC_MAIN_DOOR_LIGHT               V45
+#define VP_AC_LED_HEART_MODE                V46
 
 // digital states
 #define VP_AUTO_LOAD_POWER                  V51
 #define VP_MANUAL_LOAD_POWER_ON             V52
 
-#define VP_FORCE_RADIO_POWER                V100
-#define VP_FORCE_CAMERA_POWER               V101
 
 #define BLYNK_PRINT Serial
 
