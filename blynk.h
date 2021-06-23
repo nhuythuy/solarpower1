@@ -71,7 +71,7 @@ void blynkTimerEvent()
   // You can send any value at any time.
   // Please don't send more that 10 values per second.
   Blynk.virtualWrite(VP_AC_MAIN_DOOR_LIGHT_ON, (mainDoorLightOn ? 255 : 0));
-
+  delay(MESSAGE_DELAY);
 
   yield();
   Serial.println("Blynk timer triggered...");

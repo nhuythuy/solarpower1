@@ -46,6 +46,7 @@
 
 void setup()
 {
+  ESP.wdtDisable();
   Serial.begin(115200);
   delay(100);
 
@@ -63,6 +64,8 @@ void setup()
 
   autoLoadPower = (boolean)readState(ADDRESS_AUTO_LOAD_POWER);
   manualLoadPowerOn = (boolean)readState(ADDRESS_MANUAL_LOAD_POWER_ON);
+
+  ESP.wdtEnable(5000); // msec
 }
 
 unsigned long previousMillis = millis();
@@ -85,10 +88,11 @@ void loop() {
     updateTempHumid();
     yield();
     updateActuators();
+
+    flipLed();
   }
   
   BlynkEdgent.run();
 
-  flipLed();
   delay(100);
 }
