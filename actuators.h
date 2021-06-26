@@ -76,7 +76,7 @@ void updateActuators(){
     updateEntranceLight();
   }
   else{ // autoLoadPower == OFF or MANUAL activated
-    if(manualLoadPowerOn && (ssBatteryVolt > 13.2)){
+    if(manualLoadPowerOn && (ssBatteryVolt > 12.0)){
       turnOnEntranceLight();
     }
     else{
