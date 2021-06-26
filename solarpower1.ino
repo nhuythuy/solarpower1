@@ -5,12 +5,6 @@
 #include "blynk.h"
 
 
-#define MESSAGE_DELAY 50
-// This function sends Arduino's up time every second to Virtual Pin (5).
-// In the app, Widget's reading frequency should be set to PUSH. This means
-// that you define how often to send data to Blynk App.
-
-
 void setup()
 {
   ESP.wdtDisable();
